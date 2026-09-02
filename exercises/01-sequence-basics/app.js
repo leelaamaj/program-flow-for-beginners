@@ -13,8 +13,11 @@ Mantén este formato:
 */
 
 const answer = `
-flowchart TD
-    A[start] --> B[end]
+flowchart LR
+    A("Start") --> B["Boil Water"]
+    B["Boil Water"] --> C["Brew Coffee"]
+    C["Brew Coffee"] --> D["Serve Cofee"]
+    D["Serve Cofee"] --> E("End")
 `;
 
 module.exports = answer.trim();

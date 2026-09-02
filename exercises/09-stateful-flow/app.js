@@ -1,13 +1,12 @@
-/*
-Edit only the Mermaid flow inside `answer`.
-Keep this shape: const answer = `...`; module.exports = answer.trim();
----
-Edita solo el flujo Mermaid dentro de `answer`.
-Manten esta forma: const answer = `...`; module.exports = answer.trim();
-*/
 const answer = `
 flowchart TD
-    A[start] --> B[end]
+    A[Start] --> B[Locked]
+    B -->|event: coin| C[Unlocked]
+    B -->|event: push| B
+    C -->|event: push| D[Output: allow pass and rotate]
+    C -->|event: coin| C
+    D --> B
+    B --> E[End]
 `;
 
 module.exports = answer.trim();
